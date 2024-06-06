@@ -179,6 +179,12 @@ jobs:
           fi
           git tag -f continuous
           git push -f origin refs/tags/continuous
+      
+      - name: Upload Debug Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: NOTES.md
+          name: NOTES
 
       - name: Discord Notification
         env: { DISCORD_WEBHOOK: "${{ secrets.DISCORD_WEBHOOK }}" }
