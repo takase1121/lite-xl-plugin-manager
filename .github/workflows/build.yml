@@ -158,6 +158,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
+          pattern: lpm.*
           path: artifacts
           merge-multiple: true
 
