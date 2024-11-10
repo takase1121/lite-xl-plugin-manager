@@ -1588,7 +1588,7 @@ function Bottle:all_addons()
   if self.all_addons_cache then return self.all_addons_cache end
   local t, hash = get_repository_addons()
   for _, addon_type in ipairs({ "plugins", "libraries", "fonts", "colors" }) do
-    local addon_paths = {
+    local addon_paths = common.uniq {
       (self.local_path and (self.local_path .. PATHSEP .. "user") or USERDIR) .. PATHSEP .. addon_type,
       self.lite_xl.datadir_path .. PATHSEP .. addon_type
     }
